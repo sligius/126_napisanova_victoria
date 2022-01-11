@@ -62,6 +62,16 @@ public class SystemTests extends Assert {
         assertEquals(1, contractBook.getCons().get("number").getPaymentDocsCount());
     }
     @Test
+    public void registerPaymentDocs_registerPaymentDocWithData_PaymentDocsCountEqualsThree() {
+        ContractBook contractBook = ContractBook.create();
+
+        contractBook.addCon("number", "date");
+        contractBook.registerPaymentDocs(100, 1, TypeOfPaymentDoc.PaymentOrder, "number", "20220107");
+        contractBook.registerPaymentDocs(500, 2, TypeOfPaymentDoc.BankOrder, "number", "20211203");
+        contractBook.registerPaymentDocs(1000, 3, TypeOfPaymentDoc.PaymentOrder, "number", "20210819");
+        assertEquals(3, contractBook.getCons().get("number").getPaymentDocsCount());
+    }
+    @Test
     public void registerPaymentDocs_registerPaymentDocWithNegSum_ThrowsExceptions() {
         ContractBook contractBook = ContractBook.create();
         contractBook.addCon("number", "date");
