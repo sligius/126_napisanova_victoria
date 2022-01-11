@@ -4,6 +4,7 @@ import org.junit.*;
 import core.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -139,5 +140,24 @@ public class SystemTests extends Assert {
         pays.add(500);
         pays.add(1000);
         assertArrayEquals(pays.toArray(), contractBook.getCons().get("39").getListOfPaymentsFromCon().toArray());
+    }
+
+
+    @Test
+    public void getConsWithSums_GetListOfConsWithSums_EqualList() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("39", "20220111");
+        contractBook.registerPaymentDocs(100, 1, TypeOfPaymentDoc.PaymentOrder, "39", "20220107");
+        contractBook.registerPaymentDocs(500, 2, TypeOfPaymentDoc.BankOrder, "39", "20211203");
+
+        contractBook.addCon("69", "20220111");
+        contractBook.registerPaymentDocs(1000, 1, TypeOfPaymentDoc.PaymentOrder, "69", "20211023");
+        contractBook.registerPaymentDocs(1500, 2, TypeOfPaymentDoc.PaymentOrder, "69", "20210819");
+
+        HashMap<String, Integer> cons = new HashMap<>();
+        cons.put("39", 600);
+        cons.put("69", 2500);
+
+        assertEquals(cons,contractBook.getListOfConsWithSum());
     }
 }

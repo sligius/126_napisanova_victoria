@@ -1,7 +1,6 @@
 package core;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,7 +8,7 @@ public class ContractBook {
     private int PaymentDocsCount;
     private HashMap<String, Contract> data;
     private ContractBook() {
-        data = new HashMap<>();
+        data = new HashMap<String, Contract>();
         PaymentDocsCount = 0;
     }
 
@@ -74,5 +73,11 @@ public class ContractBook {
                 ListOfPayments.add(paymentDocs.getSum());
         }
         return ListOfPayments;
+    }
+
+    public HashMap<String, Integer> getListOfConsWithSum() {
+        HashMap<String,Integer> contracts = new HashMap<>();
+        data.forEach((k, v) -> contracts.put(k, v.getSumOfPayments()));
+        return contracts;
     }
 }
