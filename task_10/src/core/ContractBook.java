@@ -7,14 +7,18 @@ public class ContractBook {
     }
 
     public void addCon(String number, String date) {
-        if (number == null && date == null) {
-            throw new IllegalArgumentException("number and date cannot be null");
-        }
-        if (number == null)
-            throw new IllegalArgumentException("number cannot be null");
-        if (date == null)
-            throw new IllegalArgumentException("date cannot be null");
+        StringBuilder error = new StringBuilder();
 
+        if (number == null) {
+            error.append("number cannot be null\n");
+        }
+        if (date == null) {
+            error.append("date cannot be null\n");
+        }
+        if (!error.isEmpty()) {
+            throw new IllegalArgumentException(error.toString());
+        }
+        contractCount++;
     }
 
     public int getConCount() {
