@@ -98,4 +98,13 @@ public class SystemTests extends Assert {
         contractBook.deletePayment("number", 8, "20070514");
         assertEquals(0, contractBook.getCons().get("number").getPaymentDocsCount());
     }
+    @Test
+    public void deletePayment_DeleteNonExistPayment_PaymentDocCountEqualsZeroOne() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("number", "20030924");
+        contractBook.registerPaymentDocs(200, 3, TypeOfPaymentDoc.BankOrder, "number", "20091027");
+
+        contractBook.deletePayment("number", 8, "20070514");
+        assertEquals(1, contractBook.getCons().get("number").getPaymentDocsCount());
+    }
 }
