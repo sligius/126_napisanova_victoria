@@ -8,6 +8,7 @@ public class ContractBook {
     private HashMap<String, Contract> data;
     private ContractBook() {
         data = new HashMap<>();
+        PaymentDocsCount = 0;
     }
 
 
@@ -36,7 +37,12 @@ public class ContractBook {
     public static ContractBook create() {
         return new ContractBook();
     }
+
     public HashMap<String, Contract> getCons() {
         return data;
+    }
+
+    public void registerPaymentDocs(int sum, int paymentDocNumber, TypeOfPaymentDoc type, String ConNumber, String date) {
+        StringBuilder error = new StringBuilder();
     }
 }

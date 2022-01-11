@@ -48,6 +48,6 @@ public class SystemTests extends Assert {
         ContractBook contractBook = ContractBook.create();
 
         contractBook.addCon("number", "date");
-
+        assertEquals(0, contractBook.getCons().get("number").getPaymentDocsCount());
     }
 }
