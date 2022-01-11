@@ -37,13 +37,6 @@ public class SystemTests extends Assert {
         var exc = assertThrows(IllegalArgumentException.class, () -> contractBook.addCon(null, null));
         assertTrue(exc.getMessage().toLowerCase().contains("number cannot be null") && exc.getMessage().toLowerCase().contains("date cannot be null"));
     }
-    @Test
-    public void getList_getListOfAllPayments_equalLists() {
-        ContractBook contractBook = ContractBook.create();
-        contractBook.addCon("number", "date");
-        contractBook.addCon("number2", "date");
-
-    }
 
 
     @Test
