@@ -22,4 +22,12 @@ public class Contract {
     public HashMap<Integer, PaymentDocs> getPayDocs() {
         return PaymentDocuments;
     }
+
+    public int getSumOfPayments() {
+        int sum = 0;
+        for (PaymentDocs docs: PaymentDocuments.values()) {
+            sum += docs.getSum();
+        }
+        return sum;
+    }
 }
