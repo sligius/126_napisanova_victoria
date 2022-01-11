@@ -58,4 +58,11 @@ public class SystemTests extends Assert {
         var exc = assertThrows(IllegalArgumentException.class, () -> contractBook.registerPaymentDocs(-100, 1, TypeOfPaymentDoc.PaymentOrder, "number", "20001010"));
         assertTrue(exc.getMessage().toLowerCase().contains("sum is a positive number"));
     }
+    @Test
+    public void registerPaymentDocs_registerPaymentDocWithNegPaymentDocNum_ThrowsExceptions() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("number", "date");
+        var exc = assertThrows(IllegalArgumentException.class, () -> contractBook.registerPaymentDocs(100, -9, TypeOfPaymentDoc.PaymentOrder, "number", "20001010"));
+        assertTrue(exc.getMessage().toLowerCase().contains("number of payment document is a positive number"));
+    }
 }

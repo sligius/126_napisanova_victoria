@@ -48,8 +48,11 @@ public class ContractBook {
         if (sum < 0) {
             error.append("sum is a positive number\n");
         }
-         if (!error.isEmpty()) {
-             throw new IllegalArgumentException(error.toString());
-         }
+        if (paymentDocNumber < 0) {
+            error.append("number of payment document is a positive number\n");
+        }
+        if (!error.isEmpty()) {
+            throw new IllegalArgumentException(error.toString());
+        }
     }
 }
