@@ -5,6 +5,7 @@ import core.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class SystemTests extends Assert {
     @Test
@@ -49,5 +50,12 @@ public class SystemTests extends Assert {
 
         contractBook.addCon("number", "date");
         assertEquals(0, contractBook.getCons().get("number").getPaymentDocsCount());
+    }
+    @Test
+    public void registerPaymentDocs_registerPaymentDocWithNegSum_ThrowsExceptions() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("number", "date");
+        var exc = assertThrows(IllegalArgumentException.class, () -> contractBook.registerPaymentDocs(-100, 1, TypeOfPaymentDoc.PaymentOrder, "number", "20001010"));
+        assertTrue(exc.getMessage().toLowerCase().contains("sum is a positive number"));
     }
 }
