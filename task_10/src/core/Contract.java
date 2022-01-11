@@ -1,6 +1,9 @@
 package core;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class Contract {
     private String date;
@@ -29,5 +32,13 @@ public class Contract {
             sum += docs.getSum();
         }
         return sum;
+    }
+
+    public List<Integer> getListOfPaymentsFromCon() {
+        List<Integer> payments = new ArrayList<>();
+        for (PaymentDocs paymentDocs: PaymentDocuments.values()) {
+            payments.add(paymentDocs.getSum());
+        }
+        return payments;
     }
 }

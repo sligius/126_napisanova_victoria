@@ -28,7 +28,7 @@ public class ContractBook {
         }
         if (!data.containsKey(number)) {
             data.put(number, new Contract(date));
-            System.out.println("Документ зарегистрирован");
+            System.out.println("Документ зарегистрирован.");
         }
     }
 

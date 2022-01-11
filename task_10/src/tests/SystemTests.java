@@ -114,6 +114,8 @@ public class SystemTests extends Assert {
         ListOfPayments.add(1000);
         assertArrayEquals(ListOfPayments.toArray(), contractBook.getAllPayments().toArray());
     }
+
+
     @Test
     public void getConSum_CalculateSumOfConPayments_GeneralSumEqual1600() {
         ContractBook contractBook = ContractBook.create();
@@ -122,5 +124,20 @@ public class SystemTests extends Assert {
         contractBook.registerPaymentDocs(500, 2, TypeOfPaymentDoc.BankOrder, "39", "20211203");
         contractBook.registerPaymentDocs(1000, 3, TypeOfPaymentDoc.PaymentOrder, "39", "20210819");
         assertEquals(1600, contractBook.getCons().get("39").getSumOfPayments());
+    }
+
+    @Test
+    public void getAllPayments_GetAllPaymentsFromCon_EqualList() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("39", "20220111");
+        contractBook.registerPaymentDocs(100, 1, TypeOfPaymentDoc.PaymentOrder, "39", "20220107");
+        contractBook.registerPaymentDocs(500, 2, TypeOfPaymentDoc.BankOrder, "39", "20211203");
+        contractBook.registerPaymentDocs(1000, 3, TypeOfPaymentDoc.PaymentOrder, "39", "20210819");
+
+        List<Integer> pays = new ArrayList<>();
+        pays.add(100);
+        pays.add(500);
+        pays.add(1000);
+        assertArrayEquals(pays.toArray(), contractBook.getCons().get("39").getListOfPaymentsFromCon().toArray());
     }
 }
