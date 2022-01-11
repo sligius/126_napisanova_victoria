@@ -1,10 +1,15 @@
 package core;
 
+import java.util.Collection;
+import java.util.HashMap;
+
 public class ContractBook {
-    private int contractCount;
+    private int PaymentDocsCount;
+    private HashMap<String, Contract> data;
     private ContractBook() {
-        contractCount = 0;
+        data = new HashMap<>();
     }
+
 
     public void addCon(String number, String date) {
         StringBuilder error = new StringBuilder();
@@ -18,7 +23,10 @@ public class ContractBook {
         if (!error.isEmpty()) {
             throw new IllegalArgumentException(error.toString());
         }
-        contractCount++;
+        if (!data.containsKey(number)) {
+            data.put(number, new Contract(date));
+            System.out.println("Документ зарегистрирован");
+        }
     }
 
     public int getConCount() {
@@ -27,5 +35,8 @@ public class ContractBook {
 
     public static ContractBook create() {
         return new ContractBook();
+    }
+    public HashMap<String, Contract> getCons() {
+        return data;
     }
 }
