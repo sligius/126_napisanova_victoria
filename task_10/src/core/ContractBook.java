@@ -31,7 +31,7 @@ public class ContractBook {
     }
 
     public int getConCount() {
-        return 0;
+        return data.size();
     }
 
     public static ContractBook create() {
@@ -53,6 +53,11 @@ public class ContractBook {
         }
         if (!error.isEmpty()) {
             throw new IllegalArgumentException(error.toString());
+        }
+        else {
+            data.get(ConNumber).registerPaymentDocs(sum, paymentDocNumber, type, date);
+            PaymentDocsCount++;
+            System.out.println("Платёжный документ успешно создан.");
         }
     }
 }

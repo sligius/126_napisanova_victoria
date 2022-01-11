@@ -17,7 +17,7 @@ public class SystemTests extends Assert {
     public void addCon_AddConWithNumberAndDate_ConCountEqualsOne() {
         ContractBook contractBook = ContractBook.create();
         contractBook.addCon("number", "date");
-        assertEquals(0, contractBook.getConCount());
+        assertEquals(1, contractBook.getConCount());
     }
     @Test
     public void addCon_AddConWithNullNumber_ThrowsException() {
@@ -44,12 +44,22 @@ public class SystemTests extends Assert {
         contractBook.addCon("number2", "date");
 
     }
+
+
     @Test
     public void registerPaymentDocs_registerPaymentDocWithoutData_PaymentDocsCountEqualsZero() {
         ContractBook contractBook = ContractBook.create();
 
         contractBook.addCon("number", "date");
         assertEquals(0, contractBook.getCons().get("number").getPaymentDocsCount());
+    }
+    @Test
+    public void registerPaymentDocs_registerPaymentDocWithData_PaymentDocsCountEqualsOne() {
+        ContractBook contractBook = ContractBook.create();
+
+        contractBook.addCon("number", "date");
+        contractBook.registerPaymentDocs(100, 1, TypeOfPaymentDoc.PaymentOrder, "number", "20220107");
+        assertEquals(1, contractBook.getCons().get("number").getPaymentDocsCount());
     }
     @Test
     public void registerPaymentDocs_registerPaymentDocWithNegSum_ThrowsExceptions() {
