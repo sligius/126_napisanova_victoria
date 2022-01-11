@@ -107,4 +107,18 @@ public class SystemTests extends Assert {
         contractBook.deletePayment("number", 8, "20070514");
         assertEquals(1, contractBook.getCons().get("number").getPaymentDocsCount());
     }
+    @Test
+    public void getList_GetListOfAllPayments_EqualList() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("number", "20030924");
+        contractBook.registerPaymentDocs(100, 1, TypeOfPaymentDoc.PaymentOrder, "number", "20220107");
+        contractBook.registerPaymentDocs(500, 2, TypeOfPaymentDoc.BankOrder, "number", "20211203");
+        contractBook.registerPaymentDocs(1000, 3, TypeOfPaymentDoc.PaymentOrder, "number", "20210819");
+
+        List<Integer> ListOfPayments = new ArrayList<>();
+        ListOfPayments.add(100);
+        ListOfPayments.add(500);
+        ListOfPayments.add(1000);
+        assertArrayEquals(ListOfPayments.toArray(), contractBook.getAllPayments().toArray());
+    }
 }

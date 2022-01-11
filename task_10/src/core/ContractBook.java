@@ -1,7 +1,9 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class ContractBook {
     private int PaymentDocsCount;
@@ -63,5 +65,14 @@ public class ContractBook {
 
     public void deletePayment(String ConNumber, int paymentDocNumber,String paymentConDate) {
         data.get(ConNumber).getPayDocs().remove(paymentDocNumber);
+    }
+
+    public List<Integer> getAllPayments() {
+        List<Integer> ListOfPayments = new ArrayList<>();
+        for (Contract contract: data.values()) {
+            for (PaymentDocs paymentDocs: contract.getPayDocs().values())
+                ListOfPayments.add(paymentDocs.getSum());
+        }
+        return ListOfPayments;
     }
 }
