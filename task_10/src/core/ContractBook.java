@@ -60,4 +60,8 @@ public class ContractBook {
             System.out.println("Платёжный документ успешно создан.");
         }
     }
+
+    public void deletePayment(String ConNumber, int paymentDocNumber,String paymentConDate) {
+        data.get(ConNumber).getPayDocs().remove(paymentDocNumber);
+    }
 }

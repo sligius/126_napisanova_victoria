@@ -18,4 +18,8 @@ public class Contract {
     public int getPaymentDocsCount() {
         return PaymentDocuments.size();
     }
+
+    public HashMap<Integer, PaymentDocs> getPayDocs() {
+        return PaymentDocuments;
+    }
 }

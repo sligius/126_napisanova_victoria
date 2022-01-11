@@ -85,4 +85,17 @@ public class SystemTests extends Assert {
         var exc = assertThrows(IllegalArgumentException.class, () -> contractBook.registerPaymentDocs(100, -9, TypeOfPaymentDoc.PaymentOrder, "number", "20001010"));
         assertTrue(exc.getMessage().toLowerCase().contains("number of payment document is a positive number"));
     }
+
+
+    @Test
+    public void deletePayment_DeletePaymentWithNumConNumDate_PaymentDocCountEqualsZero() {
+        ContractBook contractBook = ContractBook.create();
+        contractBook.addCon("number", "20030924");
+        contractBook.registerPaymentDocs(200, 3, TypeOfPaymentDoc.BankOrder, "number", "20091027");
+        contractBook.registerPaymentDocs(7000, 8, TypeOfPaymentDoc.PaymentOrder, "number", "20070514");
+
+        contractBook.deletePayment("number", 3, "20091027");
+        contractBook.deletePayment("number", 8, "20070514");
+        assertEquals(0, contractBook.getCons().get("number").getPaymentDocsCount());
+    }
 }
