@@ -17,7 +17,7 @@ public class ContractBook {
         StringBuilder error = new StringBuilder();
 
         if (number == null) {
-            error.append("number cannot be null\n");
+            error.append("number of contract cannot be null\n");
         }
         if (date == null) {
             error.append("date cannot be null\n");
@@ -46,11 +46,17 @@ public class ContractBook {
     public void registerPaymentDocs(int sum, int paymentDocNumber, TypeOfPaymentDoc type, String ConNumber, String date) {
         StringBuilder error = new StringBuilder();
 
-        if (sum < 0) {
+        if (sum <= 0) {
             error.append("sum is a positive number\n");
         }
         if (paymentDocNumber < 0) {
             error.append("number of payment document is a positive number\n");
+        }
+        if (ConNumber == null) {
+            error.append("number of contract cannot be null\n");
+        }
+        if (date == null) {
+            error.append("date of contract cannot be null\n");
         }
         if (!error.isEmpty()) {
             throw new IllegalArgumentException(error.toString());
