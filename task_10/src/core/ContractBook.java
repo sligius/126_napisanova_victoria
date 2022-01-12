@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ContractBook {
-    private int PaymentDocsCount;
+
     private HashMap<String, Contract> data;
     private ContractBook() {
-        data = new HashMap<String, Contract>();
-        PaymentDocsCount = 0;
+        data = new HashMap<>();
     }
 
 
@@ -58,18 +57,36 @@ public class ContractBook {
         if (date == null) {
             error.append("date of contract cannot be null\n");
         }
+        if (data.get(ConNumber) == null) {
+            error.append("This contract doesn't exist.\n");
+        }
         if (!error.isEmpty()) {
             throw new IllegalArgumentException(error.toString());
         }
         else {
             data.get(ConNumber).registerPaymentDocs(sum, paymentDocNumber, type, date);
-            PaymentDocsCount++;
             System.out.println("Платёжный документ успешно создан.");
         }
     }
 
     public void deletePayment(String ConNumber, int paymentDocNumber,String paymentConDate) {
-        data.get(ConNumber).getPayDocs().remove(paymentDocNumber);
+        StringBuilder error = new StringBuilder();
+
+        if (ConNumber == null) {
+            error.append("number of contract cannot be null\n");
+        }
+        if (paymentConDate == null) {
+            error.append("date cannot be null\n");
+        }
+        if (data.get(ConNumber).getPayDocs().containsValue(paymentDocNumber)) {
+            error.append("This payment document doesn't exist.\n");
+        }
+        if (!error.isEmpty()) {
+            throw new IllegalArgumentException(error.toString());
+        }
+        else {
+            data.get(ConNumber).getPayDocs().remove(paymentDocNumber);
+        }
     }
 
     public List<Integer> getAllPayments() {

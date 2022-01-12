@@ -81,6 +81,7 @@ public class SystemTests extends Assert {
     }
 
 
+
     @Test
     public void deletePayment_DeletePaymentWithNumConNumDate_PaymentDocCountEqualsZero() {
         ContractBook contractBook = ContractBook.create();
@@ -101,6 +102,8 @@ public class SystemTests extends Assert {
         contractBook.deletePayment("number", 8, "20070514");
         assertEquals(1, contractBook.getCons().get("number").getPaymentDocsCount());
     }
+
+
     @Test
     public void getList_GetListOfAllPayments_EqualList() {
         ContractBook contractBook = ContractBook.create();
