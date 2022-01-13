@@ -16,31 +16,76 @@ public class Program {
             if (n == 1) {
                 System.out.println("Введите номер договора и дату в формате YYYYMMDD.");
                 try {
-                    data.addCon(scanner.nextLine(), scanner.nextLine());
-                } catch (IllegalArgumentException argumentException) {
+                    data.addCon(scanner.nextInt(), scanner.nextInt());
+                } catch (Exception exception) {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
                 call(data);
             }
-            //else if (n == 2) {
-              //  try {
-                //    System.out.println("Введите сумму платежа, номер документа, его тип (PaymentOrder или BankOrder), номер договора и дату заключения.");
-                  //  data.registerPaymentDocs(scanner.nextInt(), scanner.nextInt(), TypeOfPaymentDoc.valueOf(scanner.next()), scanner.nextLine(), scanner.nextLine());
-               // } catch (IllegalArgumentException argumentException) {
-                 //   System.out.println("Формат введённых данных неверен.");
-                //}
-                //System.out.println();
-               // call(data);
-            //}
-            //else if (n == 3) {
-              //  try {
-                   // System.out.println("Введите номер договора, номер платёжного документа и дату.");
-                    //data.getCons().get(scanner.nextLine()).deletePayment(scanner.nextLine(), scanner.nextInt(), scanner.nextLine());
-               // }
-           // }
+            else if (n == 2) {
+                try {
+                    System.out.println("Введите сумму платежа, номер документа, его тип (PaymentOrder или BankOrder), номер договора и дату заключения в формате YYYYMMDD.");
+                    data.registerPaymentDocs(scanner.nextInt(), scanner.nextInt(), TypeOfPaymentDoc.valueOf(scanner.next()), scanner.nextInt(), scanner.nextInt());
+                } catch (Exception exception) {
+                    System.out.println("Формат введённых данных неверен.");
+                }
+                System.out.println();
+                call(data);
+            }
+            else if (n == 3) {
+                try {
+                    System.out.println("Введите номер договора, номер платёжного документа и дату в формате YYYYMMDD.");
+                    data.getCons().get(scanner.nextInt()).deletePayment(scanner.nextInt());
+                } catch (Exception exception) {
+                    System.out.println("Формат введённых данных неверен.");
+                }
+                System.out.println();
+                call(data);
+            }
+            else if (n == 4) {
+                try {
+                    System.out.println("Введите номер договора.");
+                    System.out.println(data.getCons().get(scanner.nextInt()).getListOfPaymentsFromCon());
+                } catch (Exception exception) {
+                    System.out.println("Формат введённых данных неверен.");
+                }
+                System.out.println();
+                call(data);
+            }
+            else if (n == 5) {
+                try {
+                    System.out.println("Введите номер договора.");
+                    System.out.println(data.getCons().get(scanner.nextInt()).getSumOfPayments());
+                } catch (Exception exception) {
+                    System.out.println("Формат введённых данных неверен.");
+                }
+                System.out.println();
+                call(data);
+            }
+            else if (n == 6) {
+                try {
+                    System.out.println(data.getAllPayments());
+                } catch (Exception exception) {
+                    System.out.println(data.getAllPayments());
+                }
+                System.out.println();
+                call(data);
+            }
+            else if (n == 7) {
+                try {
+                    System.out.println(data.getListOfConsWithSum());
+                } catch (Exception exception) {
+                    System.out.println("Формат введённых данных неверен.");
+                }
+                System.out.println();
+                call(data);
+            }
+            else if (n == 8) {
+                System.out.println("Всего хорошего!");
+            }
         }
-        catch (IllegalArgumentException argumentException) {
+        catch (Exception exception) {
             System.out.println("Формат введённых данных неверен.");
             System.out.println();
             call(data);
@@ -57,5 +102,6 @@ public class Program {
         System.out.println("5 - Получить сумму всех платежей по выбранному договору");
         System.out.println("6 - Получить список всех платежей");
         System.out.println("7 - Получить список всех договоров с их суммарными платежами");
+        System.out.println("8 - Завершить работу в программе");
     }
 }

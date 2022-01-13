@@ -2,10 +2,10 @@ package core;
 
 public class PaymentDocs {
     private int sum;
-    private String date;
+    private int date;
     private TypeOfPaymentDoc type;
 
-    public PaymentDocs(int sum, TypeOfPaymentDoc type, String date) {
+    public PaymentDocs(int sum, TypeOfPaymentDoc type, int date) {
         this.sum = sum;
         this.type = type;
         this.date = date;
