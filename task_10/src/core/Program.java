@@ -30,7 +30,6 @@ public class Program {
                 else {
                     System.out.println("Всего хорошего!");
                 }
-               // call(data);
             }
             else if (n == 2) {
                 try {
@@ -132,9 +131,6 @@ public class Program {
                     System.out.println("Всего хорошего!");
                 }
             }
-           // else if (n == 8) {
-             //   System.out.println("Всего хорошего!");
-           // }
         }
         catch (Exception exception) {
             System.out.println("Формат введённых данных неверен.");
@@ -144,8 +140,11 @@ public class Program {
     }
 
     private static void callMenu() {
+        System.out.println();
         System.out.println("*Система учёта платежей по договорам.*");
+        System.out.println();
         System.out.println("Вводите все данные предельно внимательно. Там, где требуется несколько разных параметров, вводите их через пробел.");
+        System.out.println();
         System.out.println("1 - Добавить договор");
         System.out.println("2 - Зарегистрировать платёжный документ");
         System.out.println("3 - Удалить платёж");
@@ -153,7 +152,6 @@ public class Program {
         System.out.println("5 - Получить сумму всех платежей по выбранному договору");
         System.out.println("6 - Получить список всех платежей");
         System.out.println("7 - Получить список всех договоров с их суммарными платежами");
-        //System.out.println("8 - Завершить работу в программе");
     }
 
     private static void callChoice() {

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ContractBook {
-    private HashMap<Integer, Contract> data;
+    private final HashMap<Integer, Contract> data;
 
     public HashMap<Integer, Contract> getCons() {
         return data;
@@ -22,7 +22,7 @@ public class ContractBook {
         }
         else {
             if (number > 0 && String.valueOf(date).length() == 8) {
-                data.put(number, new Contract(date));
+                data.put(number, new Contract());
                 System.out.println("Договор успешно добавлен.");
             }
             else {

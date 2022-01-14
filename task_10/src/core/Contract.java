@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Contract {
-    private final int date;
-    private HashMap<Integer, PaymentDocs> PaymentDocuments = new HashMap<>();
+    private final HashMap<Integer, PaymentDocs> PaymentDocuments = new HashMap<>();
 
 
-    public Contract(int date) {
-        this.date = date;
+    public Contract() {
     }
 
     public void registerPaymentDocs(int sum, int paymentDocNumber, TypeOfPaymentDoc type, int date) throws Exception {
@@ -32,7 +30,6 @@ public class Contract {
         }
         else {
             PaymentDocuments.remove(paymentDocNumber);
-            //docs.remove(paymentDocNumber);
             System.out.println("Платёж успешно удалён.");
         }
     }
