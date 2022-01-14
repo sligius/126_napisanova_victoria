@@ -10,6 +10,7 @@ public class Program {
 
     public static void call(ContractBook data) {
         Scanner scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
         callMenu();
         try {
             int n = scanner.nextInt();
@@ -21,7 +22,15 @@ public class Program {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
+               // call(data);
             }
             else if (n == 2) {
                 try {
@@ -31,7 +40,14 @@ public class Program {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
             }
             else if (n == 3) {
                 try {
@@ -41,7 +57,14 @@ public class Program {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
             }
             else if (n == 4) {
                 try {
@@ -51,7 +74,14 @@ public class Program {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
             }
             else if (n == 5) {
                 try {
@@ -61,7 +91,14 @@ public class Program {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
             }
             else if (n == 6) {
                 try {
@@ -70,7 +107,14 @@ public class Program {
                     System.out.println(data.getAllPayments());
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
             }
             else if (n == 7) {
                 try {
@@ -79,11 +123,18 @@ public class Program {
                     System.out.println("Формат введённых данных неверен.");
                 }
                 System.out.println();
-                call(data);
+                callChoice();
+                int l = scanner1.nextInt();
+                if (l == 1) {
+                    call(data);
+                }
+                else {
+                    System.out.println("Всего хорошего!");
+                }
             }
-            else if (n == 8) {
-                System.out.println("Всего хорошего!");
-            }
+           // else if (n == 8) {
+             //   System.out.println("Всего хорошего!");
+           // }
         }
         catch (Exception exception) {
             System.out.println("Формат введённых данных неверен.");
@@ -102,6 +153,12 @@ public class Program {
         System.out.println("5 - Получить сумму всех платежей по выбранному договору");
         System.out.println("6 - Получить список всех платежей");
         System.out.println("7 - Получить список всех договоров с их суммарными платежами");
-        System.out.println("8 - Завершить работу в программе");
+        //System.out.println("8 - Завершить работу в программе");
+    }
+
+    private static void callChoice() {
+        System.out.println("Продолжить или завершить работу?");
+        System.out.println("1 - Продолжить");
+        System.out.println("2 - Завершить");
     }
 }
