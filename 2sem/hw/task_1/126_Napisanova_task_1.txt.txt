@@ -1,0 +1,14 @@
+DynamicArray|11|size = 1; -> size = 0;|getSize_getSizeOfNewArray_SizeEqualsZero
+DynamicArray|15|data = new Object[capacity] -> data = new Object[size]|setValue_setNewValue_ValueIsRight
+DynamicArray|21|newSize > 0; -> newSize < 0;|resize_SetNewSizeWithPositiveValue_NewSizeIsRight 
+DynamicArray|27|newSize = size; -> size = newSize;|resize_SetNewSizeWithPositiveValue_NewSizeIsRight 
+DynamicArray|23|newSize != capacity; -> newSixe > capacity;|resize_setNewSizeBiggerThanCapacity_SizeDoesNotChange
+DynamicArray|30|(index < 0 || index > size) -> (index < 0 || index >= size)|getIndex_GetIndexEqualsSize_IndexOutOfBounds
+DynamicArray|35|(index < 0 || index > size) -> (index < 0 || index >= size)|setIndex_SetIndexEqualsSize_IndexOutOfBounds
+DynamicArray|40|(index < 0 || index > size) -> (index < 0 || index >= size)|insertIndex_InsertIndexEqualsSize_IndexOutOfBounds
+DynamicArray|42|(capacity > size) -> (capacity == size)|insertIndex_InsertNewIndexInNotExistingSlot_ValueIsRight
+DynamicArray|49|data[size] = value; -> data[index] = value;|insertIndex_InsertNewIndexInNotExistingSlot_ValueIsRight
+DynamicArray|52|(capacity < size) -> (capacity == size)|pushBack_pushBackElement_ValueIsCorrect
+DynamicArray|56|data[capacity] = value; -> data[size] = value;|pushBack_pushBackElement_ValueIsCorrect
+DynamicArray|60|(size < 0) -> (size == 0)|popBack_PopBackElementFromEmptyArray_UnsupportedOperation
+DynamicArray|66|(index < 0 || index > size) -> (index < 0 || index >= size)|remove_RemoveIndexEqualSize_IndexOutOfBounds
