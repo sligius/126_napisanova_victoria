@@ -167,9 +167,27 @@ public class Task1_Tests extends Assert {
     public void createList_CreateNewDoubleLinkedList_ListIsNotEmpty() {
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
 
-        Node<Integer> element = (Node<Integer>) list.pushBack(5);
+        list.pushFront(5);
 
         assertEquals(false, list.isEmpty());
+    }
+
+    @Test
+    public void pushFront_PushElementToNewList_SizeEqualsOne() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+
+        list.pushFront(5);
+
+        assertEquals(1, list.getSize());
+    }
+
+    @Test
+    public void pushBack_PushElementToNewList_SizeEqualsOne() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+
+        list.pushBack(5);
+
+        assertEquals(1, list.getSize());
     }
 
     @Test
