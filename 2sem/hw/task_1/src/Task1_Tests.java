@@ -216,5 +216,28 @@ public class Task1_Tests extends Assert {
         assertEquals(10, tail.getData().intValue());
     }
 
+    @Test
+    public void get_GetIndexEqualsSize_IndexOutOfBonds() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.pushFront(5);
+        try {
+            list.get(1);
+            fail();
+        } catch (IndexOutOfBoundsException e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    public void get_GetIndex_IndexIsRight() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.pushBack(5);
+        list.pushBack(10);
+        list.pushBack(15);
+
+        Node<Integer> element = (Node<Integer>) list.get(1);
+
+        assertEquals(10, element.getData().intValue());
+    }
 }
 
