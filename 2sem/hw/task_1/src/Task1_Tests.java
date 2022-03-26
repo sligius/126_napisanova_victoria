@@ -3,6 +3,8 @@ import org.junit.*;
 
 public class Task1_Tests extends Assert {
 
+    /* DynamicArray */
+
     @Test
     public void getSize_getSizeOfNewArray_SizeEqualsZero() {
         DynamicArray<Integer> array = new DynamicArray<>();
@@ -151,5 +153,50 @@ public class Task1_Tests extends Assert {
             assertTrue(true);
         }
     }
+
+    /* DoubleLinkedList */
+
+    @Test
+    public void createList_CreateNewDoubleLinkedList_ListIsEmpty() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+
+        assertEquals(true, list.isEmpty());
+    }
+
+    @Test
+    public void createList_CreateNewDoubleLinkedList_ListIsNotEmpty() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+
+        Node<Integer> element = (Node<Integer>) list.pushBack(5);
+
+        assertEquals(false, list.isEmpty());
+    }
+
+    @Test
+    public void pushFront_PushFrontItem_ItemIsRight() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.pushFront(10);
+
+        Node<Integer> head = (Node<Integer>) list.getHead();
+        Node<Integer> tail = (Node<Integer>) list.getTail();
+
+        assertEquals(10, head.getData().intValue());
+        assertEquals(10, tail.getData().intValue());
+    }
+
+    @Test
+    public void pushFront_PushFrontFewItems_ItemsAreRight() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.pushFront(10);
+        list.pushFront(100);
+        list.pushFront(1000);
+
+        Node<Integer> head = (Node<Integer>) list.getHead();
+        Node<Integer> tail = (Node<Integer>) list.getTail();
+
+        assertEquals(1000, head.getData().intValue());
+        assertEquals(10, tail.getData().intValue());
+    }
+
 }
 
