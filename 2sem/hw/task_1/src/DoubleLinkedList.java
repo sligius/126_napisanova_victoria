@@ -52,13 +52,15 @@ public class DoubleLinkedList<T> {
     public void insertListAfter(ListNode<T> node, DoubleLinkedList<T> list) {
         if(list.isEmpty())
             return;
-        list.getHead().setNext(node);
-        list.getTail().setPrev(node.getNext());
+        list.getHead().setPrev(node);
+        list.getTail().setNext(node.getNext());
         node.getNext().setPrev(list.getTail());
         node.setNext(list.getHead());
 
         list.dummy.setNext(list.dummy);
         list.dummy.setPrev(list.dummy);
+
+        size += list.getSize();
     }
     public void insertListBefore(ListNode<T> node, DoubleLinkedList<T> list) {
         if(list.isEmpty())
