@@ -1,0 +1,5 @@
+BubbleSort|4|for(int sps = 1; sps < data.length - 1; ++sps) -> for(int sps = 0; sps < data.length - 1; ++sps)|BubbleSort_SortData_DataIsCorrect
+BubbleSort|5|for(int i = 0; i < data.length - sps; ++i) -> for(int i = 1; i < data.length - sps; ++i)|BubbleSort_SameNumbers_SortIsRight
+BubbleSort|6|if(comparator.compare(data[i - 1], data[i]) < 0) -> if(comparator.compare(data[i - 1], data[i]) > 0)|BubbleSort_NotNeedSort_NumbersOnRightPlaces
+
+SelectionSort|0|
