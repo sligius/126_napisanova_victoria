@@ -12,3 +12,24 @@ DynamicArray|52|(capacity < size) -> (capacity == size)|pushBack_pushBackElement
 DynamicArray|56|data[capacity] = value; -> data[size] = value;|pushBack_pushBackElement_ValueIsCorrect
 DynamicArray|60|(size < 0) -> (size == 0)|popBack_PopBackElementFromEmptyArray_UnsupportedOperation
 DynamicArray|66|(index < 0 || index > size) -> (index < 0 || index >= size)|remove_RemoveIndexEqualSize_IndexOutOfBounds
+
+DoubleLinkedList|11|return dummy == dummy; -> return dummy == dummy.getNext();|createList_CreateNewDoubleLinkedList_ListIsNotEmpty
+DoubleLinkedList|17|return dummy.getPrev(); -> return dummy.getNext();|pushFront_PushFrontFewItems_ItemsAreRight
+DoubleLinkedList|20|return dummy.getNext(); -> return dummy.getPrev();|pushFront_PushFrontFewItems_ItemsAreRight
+DoubleLinkedList|24|if(index < 0 || index > size) -> if(index < 0 || index >= size)|get_GetIndexEqualsSize_IndexOutOfBonds
+DoubleLinkedList|28|cur = cur.getPrev(); -> cur = cur.getNext();|get_GetIndex_IndexIsRight
+DoubleLinkedList|33|--size; -> ++size;|pushBack_PushElementToNewList_SizeEqualsOne
+DoubleLinkedList|41|return insertBefore(getTail(), data); -> return insertBefore(getHead(), data);|pushFront_PushFrontFewItems_ItemsAreRight
+DoubleLinkedList|44|return insertAfter(getHead(), data); -> return insertAfter(getTail(), data);|pushFront_PushFrontFewItems_ItemsAreRight
+#у меня вышло так, что в 17-20-41-44 строках выявляется ошибка одним тестом
+DoubleLinkedList|47|node.getPrev().setPrev(node.getNext()); -> node.getPrev().setNext(node.getNext());|remove_RemoveElementFromList_NotEmptyList
+DoubleLinkedList|48|node.getNext().setNext(node.getPrev()); -> node.getNext().setPrev(node.getPrev());|remove_RemoveElementFromList_NotEmptyList
+DoubleLinkedList|55|list.getHead().setNext(node); -> list.getHead().setPrev(node);|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect
+DoubleLinkedList|56|list.getTail().setPrev(node.getNext()); -> list.getTail().setNext(node.getNext());|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect
+DoubleLinkedList|62|*nothing* -> size += list.getSize();|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect #иначе индекс вылетает за границы
+DoubleLinkedList|48|list.getHead().setNext(node.getPrev()); -> list.getHead().setPrev(node.getPrev());|insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect
+DoubleLinkedList|48|list.getTail().setPrev(node); -> list.getTail().setNext(node);|insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect
+DoubleLinkedList|76|*nothing* -> size += list.getSize();|insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect #иначе индекс вылетает за границы
+
+Node|13|this.next = prev; -> this.next = next;|pushFront_PushFrontFewItems_ItemsAreRight
+Node|13|this.prev = next; -> this.prev = prev;|pushFront_PushFrontFewItems_ItemsAreRight
