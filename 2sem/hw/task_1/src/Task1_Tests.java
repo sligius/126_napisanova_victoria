@@ -239,5 +239,31 @@ public class Task1_Tests extends Assert {
 
         assertEquals(10, element.getData().intValue());
     }
+
+    @Test
+    public void remove_RemoveElementFromList_EmptyList() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        Node<Integer> element = (Node<Integer>) list.pushBack(5);
+
+        list.remove(element);
+
+        assertEquals(0, list.getSize());
+    }
+
+    @Test
+    public void remove_RemoveElementFromList_NotEmptyList() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        Node<Integer> element1 = (Node<Integer>) list.pushBack(5);
+        Node<Integer> element2 = (Node<Integer>) list.insertAfter(element1, 15);
+        Node<Integer> element3 = (Node<Integer>) list.insertBefore(element1, 25);
+
+        list.remove(element1);
+
+        Node<Integer> item1 = (Node<Integer>) element3.getNext();
+        Node<Integer> item2 = (Node<Integer>) element2.getPrev();
+
+        assertEquals(15, item1.getData().intValue());
+        assertEquals(25, item2.getData().intValue());
+    }
 }
 

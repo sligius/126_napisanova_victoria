@@ -44,8 +44,8 @@ public class DoubleLinkedList<T> {
         return insertAfter(getTail(), data);
     }
     public void remove(ListNode<T> node) {
-        node.getPrev().setPrev(node.getNext());
-        node.getNext().setNext(node.getPrev());
+        node.getPrev().setNext(node.getNext());
+        node.getNext().setPrev(node.getPrev());
         size = Math.max(0, size - 1);
     }
 
