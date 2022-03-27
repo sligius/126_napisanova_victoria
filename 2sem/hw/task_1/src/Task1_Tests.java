@@ -297,5 +297,37 @@ public class Task1_Tests extends Assert {
         assertEquals(55, element6.getData().intValue());
 
     }
+
+    @Test
+    public void insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect() {
+        DoubleLinkedList<Integer> list1 = new DoubleLinkedList<>();
+
+        list1.pushBack(35);
+        list1.pushBack(45);
+        list1.pushBack(55);
+
+        DoubleLinkedList<Integer> list2 = new DoubleLinkedList<>();
+
+        list2.pushBack(5);
+        list2.pushBack(15);
+        list2.pushBack(25);
+
+        list1.insertListBefore(list1.get(0), list2);
+
+        Node<Integer> element1 = (Node<Integer>) list1.get(0);
+        Node<Integer> element2 = (Node<Integer>) list1.get(1);
+        Node<Integer> element3 = (Node<Integer>) list1.get(2);
+        Node<Integer> element4 = (Node<Integer>) list1.get(3);
+        Node<Integer> element5 = (Node<Integer>) list1.get(4);
+        Node<Integer> element6 = (Node<Integer>) list1.get(5);
+
+        assertEquals(5, element1.getData().intValue());
+        assertEquals(15, element2.getData().intValue());
+        assertEquals(25, element3.getData().intValue());
+        assertEquals(35, element4.getData().intValue());
+        assertEquals(45, element5.getData().intValue());
+        assertEquals(55, element6.getData().intValue());
+
+    }
 }
 
