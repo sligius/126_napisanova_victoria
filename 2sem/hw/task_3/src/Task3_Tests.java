@@ -31,7 +31,6 @@ public class Task3_Tests extends Assert {
         assertArrayEquals(new Integer[]{0, 1, 3, 5}, data);
     }
 
-    /*
     @Test
     public void QuickSort_UnsortedArrayWithSameElements_DataIsCorrect() {
         QuickSort<Integer> qs = new QuickSort<>();
@@ -41,7 +40,6 @@ public class Task3_Tests extends Assert {
 
         assertArrayEquals(new Integer[]{0, 0, 3, 3, 5}, data);
     }
-     */
 
     /* MergeSort */
 
