@@ -49,7 +49,7 @@ public class Task2_Tests extends Assert {
         assertArrayEquals(new Integer[]{1, 3, 5}, data);
     }
 
-    /* Selection */
+    /* SelectionSort */
 
     @Test
     public void SelectionSort_InvertedArray_DataIsCorrect() {
@@ -79,5 +79,27 @@ public class Task2_Tests extends Assert {
         ss.sort(data, new TestComparator());
 
         assertArrayEquals(new Integer[]{5, 15, 25, 35, 45}, data);
+    }
+
+    /* InsertionSort */
+
+    @Test
+    public void InsertionSort_SortAlreadySortedArray_DataIsCorrect() {
+        InsertionSort<Integer> is = new InsertionSort<>();
+        Integer[] data = {5, 15};
+
+        is.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15}, data);
+    }
+
+    @Test
+    public void InsertionSort_UnsortedArray_DataIsCorrect() {
+        InsertionSort<Integer> is = new InsertionSort<>();
+        Integer[] data = {15, 5};
+
+        is.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15}, data);
     }
 }

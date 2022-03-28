@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c624a928-03f8-492c-b891-179bd750fbbe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/126_Napisanova_task_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/126_Napisanova_task_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/task_2/SelectionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_2/SelectionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/task_2/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_2/InsertionSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/task_2/Task2_Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_2/Task2_Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsertionSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task2_Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.Task2_Tests">
+  <component name="RunManager" selected="JUnit.Task2_Tests.InsertionSort_UnsortedArray_DataIsCorrect">
     <configuration name="Task2_Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="task_2" />
       <option name="PACKAGE_NAME" value="" />
@@ -55,21 +54,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Task2_Tests.BubbleSort_SortData_DataIsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Task2_Tests.InsertionSort_SortAlreadySortedArray_DataIsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="task_2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Task2_Tests" />
-      <option name="METHOD_NAME" value="BubbleSort_SortData_DataIsCorrect" />
+      <option name="METHOD_NAME" value="InsertionSort_SortAlreadySortedArray_DataIsCorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Task2_Tests.SelectionSort_InvertedArray_DataIsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Task2_Tests.InsertionSort_UnsortedArray_DataIsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="task_2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Task2_Tests" />
-      <option name="METHOD_NAME" value="SelectionSort_InvertedArray_DataIsCorrect" />
+      <option name="METHOD_NAME" value="InsertionSort_UnsortedArray_DataIsCorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,11 +96,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Task2_Tests.InsertionSort_UnsortedArray_DataIsCorrect" />
+        <item itemvalue="JUnit.Task2_Tests.InsertionSort_SortAlreadySortedArray_DataIsCorrect" />
         <item itemvalue="JUnit.Task2_Tests" />
         <item itemvalue="JUnit.Task2_Tests.SelectionSort_SortArray_DataIsCorrect" />
         <item itemvalue="JUnit.Task2_Tests.SelectionSort_UnsortedArray_DataIsCorrect" />
-        <item itemvalue="JUnit.Task2_Tests.SelectionSort_InvertedArray_DataIsCorrect" />
-        <item itemvalue="JUnit.Task2_Tests.BubbleSort_SortData_DataIsCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -137,6 +136,16 @@
           <url>file://$PROJECT_DIR$/src/SelectionSort.java</url>
           <line>7</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/InsertionSort.java</url>
+          <line>3</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/InsertionSort.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
