@@ -1,0 +1,14 @@
+QuickSort|12|int base = split(data, e, b); -> int base = split(data, b, e);|QuickSort_SortUnsortedArray_DataIsCorrect #после исправления данной строки вылезают проблемы со следующими
+QuickSort|13|qSortRec(data, b, base - 2); -> qSortRec(data, b, base - 1);|QuickSort_SortUnsortedArray_DataIsCorrect
+QuickSort|14|qSortRec(data, base + 2, e); -> qSortRec(data, base + 1, e);|QuickSort_SortUnsortedArray_DataIsCorrect
+QuickSort|24|swap(data, left, baseElem); -> swap(data, left - 1, baseElem);|QuickSort_SortUnsortedArray_DataIsCorrect
+QuickSort|25|baseElem = left; -> baseElem = left - 1;|#надо разобраться
+QuickSort|29|swap(data, left + 1, right); -> swap(data, left, right);|#надо разобраться
+
+MergeSort|17|mergeSortRec(sorting, buffer, begin, middle); -> mergeSortRec(buffer, sorting, begin, middle);|MergeSort_FirstElementsAreUnsorted_DataIsCorrect
+MergeSort|18|mergeSortRec(sorting, buffer, middle + 1, end); -> mergeSortRec(buffer, sorting, middle + 1, end);|MergeSort_UnsortedLargeArray_DataIsCorrect
+MergeSort|19|merge(buffer, sorting, begin, middle - begin, end - middle); -> merge(buffer, sorting, begin, middle - begin + 1, end - middle);|MergeSort_SortUnsortedArray_DataIsCorrect
+MergeSort|32|to[resPos] = from[secondFocus++]; -> to[resPos++] = from[secondFocus++];|MergeSort_SortedArrayWithEvenNumberOfElements_DataIsCorrect
+MergeSort|34|to[resPos++] = from[firstFocus]; -> to[resPos++] = from[firstFocus++];|MergeSort_ReversedArray_DataIsCorrect
+MergeSort|35|else if (comparator.compare(from[firstFocus], from[secondFocus]) > 0) -> else if (comparator.compare(from[firstFocus], from[secondFocus]) < 0)|MergeSort_SortUnsortedArray_DataIsCorrect
+#19 и 35 исправляются первыми так как от них зависит остальное
