@@ -112,4 +112,56 @@ public class Task3_Tests extends Assert {
 
         assertArrayEquals(new Integer[]{5, 15, 25, 35}, data);
     }
+
+    /* HeapSort */
+
+    @Test
+    public void HeapSort_ArrayWithAllSameElements_DataIsCorrect(){
+        HeapSort<Integer> hs = new HeapSort<>();
+        Integer[] data = {5, 5, 5};
+
+        hs.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 5, 5}, data);
+    }
+
+    @Test
+    public void HeapSort_AlreadySortedArrayWithTwoElements_DataIsCorrect() {
+        HeapSort<Integer> hs = new HeapSort<>();
+        Integer[] data = {5, 15};
+
+        hs.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15}, data);
+    }
+
+    @Test
+    public void HeapSort_AlreadySortedArrayWithThreeElements_DataIsCorrect() {
+        HeapSort<Integer> hs = new HeapSort<>();
+        Integer[] data = {5, 15, 25};
+
+        hs.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15, 25}, data);
+    }
+
+    @Test
+    public void HeapSort_UnsortedLargeArray_DataIsCorrect(){
+        HeapSort<Integer> hs = new HeapSort<>();
+        Integer[] data = {25, 5, 15, 55, 35, 45, 75, 65, 95, 85};
+
+        hs.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15, 25, 35, 45, 55, 65, 75, 85, 95}, data);
+    }
+
+    @Test
+    public void HeapSort_UnsortedArrayWithSameRepeatedElements_DataIsCorrect(){
+        HeapSort<Integer> hs = new HeapSort<>();
+        Integer[] data = {15, 5, 35, 25, 15, 35, 35, 5};
+
+        hs.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 5, 15, 15, 25, 35, 35, 35}, data);
+    }
 }

@@ -12,3 +12,9 @@ MergeSort|32|to[resPos] = from[secondFocus++]; -> to[resPos++] = from[secondFocu
 MergeSort|34|to[resPos++] = from[firstFocus]; -> to[resPos++] = from[firstFocus++];|MergeSort_ReversedArray_DataIsCorrect
 MergeSort|35|else if (comparator.compare(from[firstFocus], from[secondFocus]) > 0) -> else if (comparator.compare(from[firstFocus], from[secondFocus]) < 0)|MergeSort_SortUnsortedArray_DataIsCorrect
 #19 и 35 исправляются первыми так как от них зависит остальное
+
+HeapSort|10|swap(0, data.length - sortedSize); -> swap(0, data.length - sortedSize - 1);|HeapSort_ArrayWithAllSameElements_DataIsCorrect
+HeapSort|17|for (int i = start; i >= 1; --i) -> for (int i = start; i >= 0; --i)|HeapSort_AlreadySortedArrayWithTwoElements_DataIsCorrect
+HeapSort|18|siftDown(i, 2 * i, 2 * i + 1, data.length); -> siftDown(i, 2 * i + 1, 2 * i + 2, data.length);|HeapSort_AlreadySortedArrayWithThreeElements_DataIsCorrect
+HeapSort|34|siftDown(left, 2 * left, 2 * left + 1, size); -> siftDown(left, 2 * left + 1, 2 * left + 2, size);|HeapSort_UnsortedArrayWithSameRepeatedElements_DataIsCorrect
+HeapSort|38|siftDown(right, 2 * right + 1, 2 * right + 2, data.length); -> siftDown(right, 2 * right + 1, 2 * right + 2, size);|HeapSort_UnsortedLargeArray_DataIsCorrect
