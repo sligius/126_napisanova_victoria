@@ -9,6 +9,14 @@ public class Task2_Tests extends Assert {
         }
     }
 
+    private boolean isSorted(Integer[] data) {
+        for(int i = 0; i < data.length - 1; ++i) {
+            if(data[i] > data[i + 1])
+                return false;
+        }
+        return true;
+    }
+
     /* BubbleSort */
 
     @Test
@@ -41,11 +49,35 @@ public class Task2_Tests extends Assert {
         assertArrayEquals(new Integer[]{1, 3, 5}, data);
     }
 
-    private boolean isSorted(Integer[] data) {
-        for(int i = 0; i < data.length - 1; ++i) {
-            if(data[i] > data[i + 1])
-                return false;
-        }
-        return true;
+    /* Selection */
+
+    @Test
+    public void SelectionSort_InvertedArray_DataIsCorrect() {
+        SelectionSort<Integer> ss = new SelectionSort<>();
+        Integer[] data = {5, 3, 1};
+
+        ss.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{1, 3, 5}, data);
+    }
+
+    @Test
+    public void SelectionSort_UnsortedArray_DataIsCorrect() {
+        SelectionSort<Integer> ss = new SelectionSort<>();
+        Integer[] data = {15, 5};
+
+        ss.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15}, data);
+    }
+
+    @Test
+    public void SelectionSort_SortArray_DataIsCorrect() {
+        SelectionSort<Integer> ss = new SelectionSort<>();
+        Integer[] data = {35, 15, 5, 25, 45};
+
+        ss.sort(data, new TestComparator());
+
+        assertArrayEquals(new Integer[]{5, 15, 25, 35, 45}, data);
     }
 }
