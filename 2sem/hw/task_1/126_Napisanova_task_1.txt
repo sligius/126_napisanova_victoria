@@ -27,7 +27,7 @@ DoubleLinkedList|47|node.getPrev().setPrev(node.getNext()); -> node.getPrev().se
 DoubleLinkedList|48|node.getNext().setNext(node.getPrev()); -> node.getNext().setPrev(node.getPrev());|remove_RemoveElementFromList_NotEmptyList
 DoubleLinkedList|55|list.getHead().setNext(node); -> list.getHead().setPrev(node);|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect
 DoubleLinkedList|56|list.getTail().setPrev(node.getNext()); -> list.getTail().setNext(node.getNext());|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect
-DoubleLinkedList|63| -> size += list.getSize();|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect 
+DoubleLinkedList|63| -> size += list.getSize();|insertListAfter_InsertListAfterFirstList_ElementsAreCorrect
 DoubleLinkedList|68|list.getHead().setNext(node.getPrev()); -> list.getHead().setPrev(node.getPrev());|insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect
 DoubleLinkedList|69|list.getTail().setPrev(node); -> list.getTail().setNext(node);|insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect
 DoubleLinkedList|76| -> size += list.getSize();|insertListBefore_InsertListBeforeFirstList_ElementsAreCorrect

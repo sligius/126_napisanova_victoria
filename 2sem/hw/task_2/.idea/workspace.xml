@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c624a928-03f8-492c-b891-179bd750fbbe" name="Changes" comment="" />
+    <list default="true" id="c624a928-03f8-492c-b891-179bd750fbbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../task_1/126_Napisanova_task_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../task_1/126_Napisanova_task_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/126_Napisanova_task_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/126_Napisanova_task_2.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../task_1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
