@@ -1,4 +1,5 @@
 #честно говоря, я не помню, в каком порядке выявляла ошибки, так как сами тесты тоже меняла местами
+#поправила точки с запятыми и скобки
 
 DynamicArray|11|size = 1; -> size = 0;|getSize_getSizeOfNewArray_SizeEqualsZero
 DynamicArray|15|data = new Object[capacity]; -> data = new Object[size];|setValue_setNewValue_ValueIsRight
