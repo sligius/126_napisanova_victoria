@@ -20,11 +20,11 @@ public class DynamicArray<T> {
     public void resize(int newSize) {
         if(newSize < 0)
             throw new NegativeArraySizeException("Size can not be negative");
-        if(newSize > capacity) {
+        if(newSize != capacity) {
             capacity = newSize;
             data = Arrays.copyOf(data, newSize);
-            size = newSize;
         }
+        size = newSize;
     }
     public T get(int index) {
         if(index < 0 || index >= size)

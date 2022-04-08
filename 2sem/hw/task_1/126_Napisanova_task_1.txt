@@ -4,8 +4,7 @@
 DynamicArray|11|size = 1; -> size = 0;|getSize_getSizeOfNewArray_SizeEqualsZero
 DynamicArray|15|data = new Object[capacity]; -> data = new Object[size];|setValue_setNewValue_ValueIsRight
 DynamicArray|21|if(newSize > 0) -> if(newSize < 0)|resize_SetNewSizeWithPositiveValue_NewSizeIsRight
-DynamicArray|26|newSize = size; -> size = newSize;|resize_SetNewSizeWithPositiveValue_NewSizeIsRight
-DynamicArray|23|if(newSize != capacity) { -> if(newSize > capacity) {|resize_setNewSizeBiggerThanCapacity_SizeDoesNotChange
+DynamicArray|27|newSize = size; -> size = newSize;|resize_SetNewSizeWithPositiveValue_NewSizeIsRight
 DynamicArray|30|(index < 0 || index > size) -> (index < 0 || index >= size)|getIndex_GetIndexEqualsSize_IndexOutOfBounds
 DynamicArray|35|(index < 0 || index > size) -> (index < 0 || index >= size)|setIndex_SetIndexEqualsSize_IndexOutOfBounds
 DynamicArray|40|(index < 0 || index > size) -> (index < 0 || index >= size)|insertIndex_InsertIndexEqualsSize_IndexOutOfBounds

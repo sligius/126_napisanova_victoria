@@ -43,13 +43,6 @@ public class Task1_Tests extends Assert {
     }
 
     @Test
-    public void resize_setNewSizeBiggerThanCapacity_SizeDoesNotChange() {
-        DynamicArray<Integer> array = new DynamicArray<>(5);
-        array.resize(2);
-        assertEquals(5, array.getSize());
-    }
-
-    @Test
     public void getIndex_GetIndexEqualsSize_IndexOutOfBounds() {
         DynamicArray<Integer> array = new DynamicArray<>(10);
         try {
