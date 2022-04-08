@@ -9,6 +9,5 @@ SelectionSort|11|data[data.length - sortedSize] = data[maxInd]; -> data[data.len
 SelectionSort|8|maxInd = sortedSize; -> maxInd = i;|SelectionSort_SortArray_DataIsCorrect
 #ошибки в 4-10-11 выявляются последовательно одним тестом 
 
-InsertionSort|4|for (int sortedSize = 0; sortedSize < data.length; ++sortedSize) -> for (int sortedSize = 1; sortedSize < data.length; ++sortedSize)|#нужно ли это исправлять, если ошибка не определяется, но идти с 1 элемента бессмысленно?
 InsertionSort|6|while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) <= 0) { -> while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) > 0) {|InsertionSort_SortAlreadySortedArray_DataIsCorrect
 InsertionSort|8|++cur; -> --cur;|InsertionSort_UnsortedArray_DataIsCorrect
