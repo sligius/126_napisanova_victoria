@@ -6,9 +6,9 @@ DynamicArray|11|size = 1; -> size = 0;|getSize_getSizeOfNewArray_SizeEqualsZero
 DynamicArray|15|data = new Object[capacity]; -> data = new Object[size];|setValue_setNewValue_ValueIsRight
 DynamicArray|21|if(newSize > 0) -> if(newSize < 0)|resize_SetNewSizeWithPositiveValue_NewSizeIsRight
 DynamicArray|27|newSize = size; -> size = newSize;|resize_SetNewSizeWithPositiveValue_NewSizeIsRight
-DynamicArray|30|(index < 0 || index > size) -> (index < 0 || index >= size)|getIndex_GetIndexEqualsSize_IndexOutOfBounds
-DynamicArray|35|(index < 0 || index > size) -> (index < 0 || index >= size)|setIndex_SetIndexEqualsSize_IndexOutOfBounds
-DynamicArray|40|(index < 0 || index > size) -> (index < 0 || index >= size)|insertIndex_InsertIndexEqualsSize_IndexOutOfBounds
+DynamicArray|30|if(index < 0 || index > size) -> if(index < 0 || index >= size)|getIndex_GetIndexEqualsSize_IndexOutOfBounds
+DynamicArray|35|if(index < 0 || index > size) -> if(index < 0 || index >= size)|setIndex_SetIndexEqualsSize_IndexOutOfBounds
+DynamicArray|40|if(index < 0 || index > size) -> if(index < 0 || index >= size)|insertIndex_InsertIndexEqualsSize_IndexOutOfBounds
 DynamicArray|42|if(capacity > size) { -> if(capacity == size) {|insertIndex_InsertNewIndexInNotExistingSlot_ValueIsRight
 DynamicArray|49|data[size] = value; -> data[index] = value;|insertIndex_InsertNewIndexInNotExistingSlot_ValueIsRight
 DynamicArray|52|if(capacity < size) { -> if(capacity == size) {|pushBack_pushBackElement_ValueIsCorrect
